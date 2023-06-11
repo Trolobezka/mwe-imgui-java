@@ -13,3 +13,7 @@ MWEs were created with the help of these resources:
 * ["ImGui in LWJGL (UPDATE) | LWJGL Series #3" by "GamesWithGabe"](https://www.youtube.com/watch?v=Xq-eVcNtUbw)
 * ["3D Game Engine - Window Setup #2 LWJGL / OpenGL Tutorial" by "DevGenie Academy"](https://www.youtube.com/watch?v=a4Xwp2ln-N0&list=PL4QbKfRYvHvSJSVgHawYIvcIA0CcgnMzw&index=2)
 * ["ImGui" in "libGDX"](https://libgdx.com/wiki/graphics/2d/imgui)
+
+Screenshot:
+
+<img src="./screenshot.png" title="screenshot" alt="screenshot" width=50%>
