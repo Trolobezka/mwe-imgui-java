@@ -3,9 +3,7 @@
 * `mwe-application` is using the application layer from `imgui-app`.
 * `mwe-binding` is using the bindings with custom window creation (GLFW from LWJGL).
 
-Both Gradle projects were generated with default settings by following this [guide](https://docs.gradle.org/current/samples/sample_building_java_applications.html) in Gradle docs.
-
-Runnable `.jar`s can be created with the help of [Shadow](https://imperceptiblethoughts.com/shadow/getting-started/).
+Both Gradle projects were generated with default settings by following this [guide](https://docs.gradle.org/current/samples/sample_building_java_applications.html) in Gradle docs. Runnable `.jar`s can be created with the help of [Shadow](https://imperceptiblethoughts.com/shadow/getting-started/). Project created with [VSCode](https://code.visualstudio.com/docs/languages/java), [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), [Gradle](https://gradle.org/install/) and [Gradle for Java extension](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle).
 
 MWEs were created with the help of these resources:
 
