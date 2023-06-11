@@ -1,0 +1,66 @@
+plugins {
+    // Gradle Shadow Plugin
+    // https://imperceptiblethoughts.com/shadow/getting-started
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id "application"
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+ext {
+    lwjglVersion = "3.3.2"
+    lwjglNatives = "natives-windows"
+    imguiVersion = "1.86.10"
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation "org.junit.jupiter:junit-jupiter:5.9.1"
+
+    // This dependency is used by the application.
+    implementation "com.google.guava:guava:31.1-jre"
+
+    // lwjgl
+    // https://www.lwjgl.org/customize
+    implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
+	implementation "org.lwjgl:lwjgl"
+	implementation "org.lwjgl:lwjgl-glfw"
+	implementation "org.lwjgl:lwjgl-opengl"
+	runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+	runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+	runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+
+    // imgui-java
+    // https://github.com/SpaiR/imgui-java#binding
+    implementation "io.github.spair:imgui-java-binding:$imguiVersion"
+    implementation "io.github.spair:imgui-java-lwjgl3:$imguiVersion"
+    implementation "io.github.spair:imgui-java-natives-windows:$imguiVersion"
+}
+
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = "mwe.binding.App"
+}
+
+tasks.named("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+
+// https://stackoverflow.com/a/21721305/9318084
+jar {
+    manifest {
+        attributes "Main-Class": application.mainClass
+    }
+}

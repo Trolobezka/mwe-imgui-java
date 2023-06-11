@@ -1,6 +1,7 @@
-.gradle
 **/build/
+**/bin/
 !src/**/build/
+**/imgui.ini
 
 # Ignore Gradle GUI config
 gradle-app.setting
